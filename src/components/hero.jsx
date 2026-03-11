@@ -17,7 +17,7 @@ export default function Hero() {
                 </div>
                 <div className="text-7xl font-bold py-[40px] text-[#1F2937]">{data.personal.title}</div>
                 <div className="text-[#6B7280] pb-[30px]">{data.personal.bio}</div>
-                <div className="flex flex-row gap-3 mt-4">
+                <div className="flex flex-row gap-3 mt-5">
                     <a href={data.personal.links.personalBlog} className="flex flex-row items-center bg-[#4338CA] px-8 py-3.5 text-white rounded-md font-medium" >{data.navCta.label}</a>
 
                     <a href={data.personal.links.github} className="flex flex-row items-center text-[#4338CA] pr-6 border-1 rounded-md font-medium gap-1"><FontAwesomeIcon icon={faGithub} size="2x" />Github</a>

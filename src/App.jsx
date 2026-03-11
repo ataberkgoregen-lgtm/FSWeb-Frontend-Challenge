@@ -5,6 +5,8 @@ import './App.css'
 import Header from './components/header'
 import { useDispatch, useSelector } from 'react-redux'
 import Hero from './components/hero'
+import Skills from './components/skills'
+import Profile from './components/profile'
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
     <div className='font-primary'>
       <Header></Header>
       <Hero></Hero>
+      <Skills></Skills>
+      <Profile></Profile>
     </div>
   )
 }
