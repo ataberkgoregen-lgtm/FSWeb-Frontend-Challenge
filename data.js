@@ -69,7 +69,7 @@ const initialState = {
       {
         id: 1,
         title: "Workintech",
-        image: "/src/assets/projects/workintech.svg",
+        image: "/src/assets/workintech.svg",
         description:
           "Kullanıcılarınızın hangi çerezleri kabul veya reddedeceğini seçmesine olanak tanıyan basit ve özelleştirilebilir bir çerez eklentisi. Vanilla JS, SCSS ve Parcel Bundler ile geliştirilmiş olup NPM paketi olarak kullanılabilir.",
         tags: ["react", "redux", "axios"],
@@ -81,7 +81,7 @@ const initialState = {
       {
         id: 2,
         title: "Random Jokes",
-        image: "/src/assets/projects/randomjokes.svg",
+        image: "/src/assets/randomjokes.svg",
         description:
           "Kullanıcılarınızın hangi çerezleri kabul veya reddedeceğini seçmesine olanak tanıyan basit ve özelleştirilebilir bir çerez eklentisi. Vanilla JS, SCSS ve Parcel Bundler ile geliştirilmiş olup NPM paketi olarak kullanılabilir.",
         tags: ["react", "redux", "axios"],
@@ -93,7 +93,7 @@ const initialState = {
       {
         id: 3,
         title: "Journey",
-        image: "/src/assets/projects/journey.svg",
+        image: "/src/assets/journey.svg",
         description:
           "Kullanıcılarınızın hangi çerezleri kabul veya reddedeceğini seçmesine olanak tanıyan basit ve özelleştirilebilir bir çerez eklentisi. Vanilla JS, SCSS ve Parcel Bundler ile geliştirilmiş olup NPM paketi olarak kullanılabilir.",
         tags: ["react", "redux", "axios"],
