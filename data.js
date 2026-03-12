@@ -1,3 +1,6 @@
+import workintech from "./src/assets/projects/workintech.svg";
+import randomjokes from "./src/assets/projects/randomjokes.svg";
+import journey from "./src/assets/projects/journey.svg";
 const initialState = {
   theme: "light",
   tr: {
@@ -69,7 +72,7 @@ const initialState = {
       {
         id: 1,
         title: "Workintech",
-        image: "/src/assets/workintech.svg",
+        image: workintech,
         description:
           "Kullanıcılarınızın hangi çerezleri kabul veya reddedeceğini seçmesine olanak tanıyan basit ve özelleştirilebilir bir çerez eklentisi. Vanilla JS, SCSS ve Parcel Bundler ile geliştirilmiş olup NPM paketi olarak kullanılabilir.",
         tags: ["react", "redux", "axios"],
@@ -81,7 +84,7 @@ const initialState = {
       {
         id: 2,
         title: "Random Jokes",
-        image: "/src/assets/randomjokes.svg",
+        image: randomjokes,
         description:
           "Kullanıcılarınızın hangi çerezleri kabul veya reddedeceğini seçmesine olanak tanıyan basit ve özelleştirilebilir bir çerez eklentisi. Vanilla JS, SCSS ve Parcel Bundler ile geliştirilmiş olup NPM paketi olarak kullanılabilir.",
         tags: ["react", "redux", "axios"],
@@ -93,7 +96,7 @@ const initialState = {
       {
         id: 3,
         title: "Journey",
-        image: "/src/assets/journey.svg",
+        image: journey,
         description:
           "Kullanıcılarınızın hangi çerezleri kabul veya reddedeceğini seçmesine olanak tanıyan basit ve özelleştirilebilir bir çerez eklentisi. Vanilla JS, SCSS ve Parcel Bundler ile geliştirilmiş olup NPM paketi olarak kullanılabilir.",
         tags: ["react", "redux", "axios"],
@@ -179,7 +182,7 @@ const initialState = {
       {
         id: 1,
         title: "Workintech",
-        image: "/src/assets/projects/workintech.svg",
+        image: workintech,
         description:
           "A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package.",
         tags: ["react", "redux", "axios"],
@@ -191,7 +194,7 @@ const initialState = {
       {
         id: 2,
         title: "Random Jokes",
-        image: "/src/assets/projects/randomjokes.svg",
+        image: randomjokes,
         description:
           "A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package.",
         tags: ["react", "redux", "axios"],
@@ -203,7 +206,7 @@ const initialState = {
       {
         id: 3,
         title: "Journey",
-        image: "/src/assets/projects/journey.svg",
+        image: journey,
         description:
           "A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package.",
         tags: ["react", "redux", "axios"],
