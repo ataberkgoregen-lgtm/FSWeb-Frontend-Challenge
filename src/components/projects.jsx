@@ -11,7 +11,7 @@ export default function Projects() {
       <p className="text-5xl font-bold mb-9 dark:text-[#AEBCCF]">
         {data.navItems[1].label}
       </p>
-      <div className="flex flex-row justify-between gap-30">
+      <div className="flex flex-col justify-between gap-30 xl:flex-row">
         {data.projects.map((item) => {
           return (
             <div className="flex flex-col">

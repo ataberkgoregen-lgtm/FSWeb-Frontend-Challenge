@@ -2,9 +2,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { setLanguage } from "../store/actions";
 import { useState, useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { ToastContainer, toast } from "react-toastify";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
   const data = useSelector((state) => state);
   const [theme, setTheme] = useLocalStorage("theme", "light");
@@ -18,15 +20,19 @@ export default function Header() {
     }
   }, [theme]);
 
-  console.log(document.documentElement);
   function clickHandler(event) {
     const { value, name } = event.target;
 
     if (name === "toggle") {
       const newTheme = theme === "light" ? "dark" : "light";
       setTheme(newTheme);
+    } else if (name) {
+      language === "tr"
+        ? toast(`${name}'e geçtiniz`)
+        : toast(`Switched to ${name}`);
     } else {
       const newLang = language === "tr" ? "en" : "tr";
+      toast(newLang === "tr" ? "Türkçeye Geçtiniz" : "Switched to English");
       setLanguageAction(newLang);
       dispatch(setLanguage(newLang));
     }
@@ -82,6 +88,7 @@ export default function Header() {
                 <span
                   className="text-[#4731D3] cursor-pointer dark:text-[#BAB2E7]"
                   onClick={clickHandler}
+                  name="lang"
                 >
                   ENGLISH
                 </span>
@@ -92,6 +99,7 @@ export default function Header() {
                 <span
                   className="text-[#4731D3] cursor-pointer dark:text-[#BAB2E7]"
                   onClick={clickHandler}
+                  name="lang"
                 >
                   TÜRKÇE
                 </span>
@@ -109,35 +117,56 @@ export default function Header() {
           </p>
         </div>
 
-        <div className="flex py-5 gap-5.5">
-          {data.navItems.map((item) => {
-            return (
-              <Link
-                to={item.href}
-                smooth={true}
-                easing="easeInOutCubic"
-                className=" cursor-pointer"
-                offset={-300}
-              >
-                <button
-                  id={item.id}
-                  className="px-8 py-3 text-[#777777] text-lg cursor-pointer"
-                >
-                  {item.label}
-                </button>
-              </Link>
-            );
-          })}
-
-          <a
-            id="3"
-            href={data.navCta.href}
-            className=" text-[#3730A3] border-1 px-10 py-3 rounded-md text-lg dark:bg-[#FFFFFF]"
+        <nav className="relative flex md:flex-row md:py-5 gap-5 items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex md:hidden flex-col gap-1.5 cursor-pointer"
           >
-            {data.navCta.label}
-          </a>
-        </div>
+            <span
+              className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""}`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-gray-700 transition-all duration-500 ${isOpen ? "opacity-0" : ""}`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}
+            ></span>
+          </button>
+          <div
+            className={`md:flex flex-col md:flex-row gap-4 items-center  ${isOpen ? "flex" : "hidden"} `}
+          >
+            {data.navItems.map((item) => {
+              return (
+                <Link
+                  to={item.href}
+                  smooth={true}
+                  easing="easeInOutCubic"
+                  className=" cursor-pointer"
+                  offset={-300}
+                >
+                  <button
+                    name={item.label}
+                    onClick={clickHandler}
+                    id={item.id}
+                    className="md:px-8 md:py-3 text-[#777777] text-lg cursor-pointer "
+                  >
+                    {item.label}
+                  </button>
+                </Link>
+              );
+            })}
+
+            <a
+              id="3"
+              href={data.navCta.href}
+              className=" text-[#3730A3] border-1 px-10 py-3 rounded-md text-lg dark:bg-[#FFFFFF]"
+            >
+              {data.navCta.label}
+            </a>
+          </div>
+        </nav>
       </div>
+      <ToastContainer />
     </div>
   );
 }
