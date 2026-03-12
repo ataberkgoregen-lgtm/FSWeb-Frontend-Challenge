@@ -4,13 +4,35 @@ import { useState, useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { ToastContainer, toast } from "react-toastify";
 import useLocalStorage from "../hooks/useLocalStorage";
-
+import useAxios from "../hooks/useAxios";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
   const data = useSelector((state) => state);
   const [theme, setTheme] = useLocalStorage("theme", "light");
   const [language, setLanguageAction] = useLocalStorage("language", "tr");
+  const { request, loading, error } = useAxios();
+
+  //İşe Al butonuna basılınca API isteği atılıyor
+
+  async function getUsers() {
+    const data = await request({
+      method: "GET",
+      url: "/users",
+    });
+
+    console.log("Data:", data);
+  }
+
+  useEffect(() => {
+    console.log("Loading:", loading);
+  }, [loading]);
+
+  useEffect(() => {
+    if (error) {
+      console.error("Error:", error);
+    }
+  }, [error]);
 
   useEffect(() => {
     if (theme === "light") {
@@ -159,6 +181,7 @@ export default function Header() {
             <a
               id="3"
               href={data.navCta.href}
+              onClick={getUsers}
               className=" text-[#3730A3] border-1 px-10 py-3 rounded-md text-lg dark:bg-[#FFFFFF]"
             >
               {data.navCta.label}
