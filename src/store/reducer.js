@@ -8,7 +8,7 @@ export function myReducer(state = initialState.tr, action) {
     case SET_THEME:
       return {
         ...state,
-        theme: state.theme === "light" ? "dark" : "light",
+        theme: action.payload,
       };
 
     default:
