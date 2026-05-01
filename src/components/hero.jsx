@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import profilePhoto from "../assets/image 1.svg";
+import profilePhoto from "../assets/ataberk.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
@@ -51,8 +51,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="py-[28px]">
-        <img src={profilePhoto} alt="" />
+      <div className="ml-10 flex flex-row items-center justify-center ">
+        <img src={profilePhoto} alt="" className="w-fit h-fit rounded-2xl" />
       </div>
     </div>
   );

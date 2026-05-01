@@ -6,15 +6,15 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="m-auto w-4/6 mt-10 flex flex-col  pt-10 border-t-[#BAB2E7] border-t-1 mb-34"
+      className="m-auto w-4/6 mt-10 flex flex-col  pt-10 border-t-[#BAB2E7] border-t-1 mb-34 "
     >
-      <p className="text-5xl font-bold mb-9 dark:text-[#AEBCCF]">
+      <p className="text-5xl font-bold mb-9 dark:text-[#AEBCCF] ">
         {data.navItems[1].label}
       </p>
-      <div className="flex flex-col justify-between gap-30 xl:flex-row">
+      <div className="flex flex-col justify-between gap-30 xl:flex-row ">
         {data.projects.map((item) => {
           return (
-            <div className="flex flex-col">
+            <div className="flex flex-col w-fit">
               <img src={item.image} alt="" />
               <p className="text-3xl my-[18px] text-[#4338CA] font-medium dark:text-[#CFCBFF]">
                 {item.title}

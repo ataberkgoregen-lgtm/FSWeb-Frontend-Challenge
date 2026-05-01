@@ -13,17 +13,24 @@ export default function Footer() {
           <a href={data.footerCta.email} className="text-xl">
             👉{" "}
             <span className="text-[#AF0C48] text-xl underline dark:text-[#BAB2E7]">
-              {data.footerCta.email}
+              {/* {data.footerCta.email} */}
+              ataberk.goregen@gmail.com
             </span>
           </a>
           <div className="flex flex-row gap-5 py-4 xl:py-0">
             <a href="" className="text-lg dark:text-[#E1E1FF]">
               Personal Blog
             </a>
-            <a href="" className="text-[#00AB6B] text-lg">
+            <a
+              href="https://github.com/ataberkgoregen-lgtm"
+              className="text-[#00AB6B] text-lg"
+            >
               Github
             </a>
-            <a href="" className="text-[#0077B5] text-lg">
+            <a
+              href="https://www.linkedin.com/in/ataberk-goregen-704105202/"
+              className="text-[#0077B5] text-lg"
+            >
               Linkedin
             </a>
           </div>
