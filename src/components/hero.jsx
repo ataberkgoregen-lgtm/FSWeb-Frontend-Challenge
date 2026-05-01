@@ -52,7 +52,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="xl:ml-10 flex flex-row items-center justify-center mt-10 xl:mt-0 ">
-        <img src={profilePhoto} alt="" className="w-fit h-fit rounded-2xl" />
+        <img src={profilePhoto} alt="" className="w-fit rounded-2xl" />
       </div>
     </div>
   );
